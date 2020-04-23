@@ -1,17 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .place {
+            width: 480px;
+            height: 360px;
+            overflow: hidden;
+            position: relative;
+            left: 480px;
+        }
+
+        .lunbo {
+            width: 1440px;
+            height: 360px;
+            position: absolute;
+            left: 0;
+            transition-duration: 0.5s;
+            transform: translateX(0px);
+        }
+
+        .pic {
+            float: left;
+            width: 480px;
+            height: 360px;
+            visibility: visible;
+        }
+        ul{
+            width: 80px;
+            height: 20px;
+            margin:0  200px ;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.3) ;
+            border-radius: 10px;
+            list-style: none;
+        }
+        li{
+           display: inline-block;
+           width: 10px;
+           height: 10px;
+           border-radius: 50%;
+           background-color: seashell;
+           margin:2px auto;
+           
+        }
+        .color{
+            background-color: tomato;
+        }
+    </style>
 </head>
+
 <body>
     <div class="place">
-        <div class="lunbo">
-            <div class="pic"><img src="" alt=""></div>
-            <div class="pic"><img src="" alt=""></div>
-            <div class="pic"><img src="" alt=""></div>
+        <div class="lunbo" id="move">
+            <div class="pic"><img src="img/ABT6849DBC2E72EE6558A3C7BDD8E1FC330B4B44CF429F23AF5B9F3572974D96419.jpg"
+                    alt=""></div>
+            <div class="pic"><img src="img/ABT992DD552A3C31584B76300E6703D9738BCDCD5790A9BAA5CD81B9B4F7A059CEE.jpg"
+                    alt=""></div>
+            <div class="pic"><img src="img/ABTA4745131BB3E4214C58CB97B86B0BDA7D758ADE2FD1796C13E9F48E9EE7C4E51.jpg"
+                    alt=""></div>
+        </div>
+        <div>
+            <ul id="change">
+                <li class="color"></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     </div>
+    <script>
+        var lb = document.getElementById("move")
+        var ro = document.getElementById("change")
+        var li = ro.getElementsByTagName("li");
+        var d = 0
+        var count = 0
+
+                // 自动换图
+        function autoChange() {
+            d-=480;
+            if(d === -1440){
+                d= 0
+            }
+            lb.style.transform = `translateX(${d}px)`
+            roundColor();
+        }
+        function roundColor (){
+            li[count].removeAttribute("class")
+            count++
+            if(count ===3){
+                count=0
+                li[count].setAttribute("class","color")
+            }
+            li[count].setAttribute("class","color")
+        }
+        var time = setInterval(autoChange, 2000);
+        // 点击小圆点换图
+        ro.addEventListener('click',function(event){
+           
+        })
+        
+
+    </script>
 </body>
+
 </html>
