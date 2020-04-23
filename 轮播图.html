@@ -43,6 +43,7 @@
             background-color: rgba(255, 255, 255, 0.3) ;
             border-radius: 10px;
             list-style: none;
+            cursor: pointer;
         }
         li{
            display: inline-block;
@@ -71,7 +72,7 @@
         </div>
         <div>
             <ul id="change">
-                <li class="color"></li>
+                <li></li>
                 <li></li>
                 <li></li>
             </ul>
@@ -91,22 +92,14 @@
                 d= 0
             }
             lb.style.transform = `translateX(${d}px)`
-            roundColor();
         }
-        function roundColor (){
-            li[count].removeAttribute("class")
-            count++
-            if(count ===3){
-                count=0
-                li[count].setAttribute("class","color")
-            }
-            li[count].setAttribute("class","color")
-        }
+        
         var time = setInterval(autoChange, 2000);
+
         // 点击小圆点换图
-        ro.addEventListener('click',function(event){
-           
-        })
+
+                
+
         
 
     </script>
