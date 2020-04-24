@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
+<!-- <style>
     .contianer{
        padding: 0 220px;
        overflow: hidden;
@@ -37,8 +37,36 @@
         position: relative;
         right: -220px;
     }
+</style> -->
+<style>
+    .centet,.left,.right{
+        float: left;
+        
+    }
+    .centet{
+        width: 100%;
+        height: 400px;
+        background-color: saddlebrown;
+    }
+    .left,.right{
+        width: 200px;
+        height: 400px;
+        background-color: sandybrown;
+        position: relative;
+    }
+    .left{
+        margin-left: -100%;
+        left: -220px;
+    }
+    .right{
+        margin-left: -200px;
+        right: -220px;
+    }
+    .contianer{
+        padding: 0 220px;
+        overflow: hidden;
+    }
 </style>
-
 <body style="min-width: 700px;">
     <div class="contianer">
         <div class="centet">圣杯</div>
