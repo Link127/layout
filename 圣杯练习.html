@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            padding: 0 220px;
+        }
+        .center,.le,.ri{
+            float: left;
+        }
+        .center{
+            width: 100%;
+            height: 500px;
+            background-color: tomato;
+        }
+        .le,.ri{
+            width: 200px;
+            height: 300px;
+            background-color: turquoise;
+            position: relative;
+
+        }
+        .le{
+            margin-left: -100%;
+            left: -220px;
+        }
+        .ri{
+            margin-left: -200px;
+            right: -220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center"></div>
+        <div class="le"></div>
+        <div class="ri">
+
+        </div>
+    </div>
+</body>
+</html>
